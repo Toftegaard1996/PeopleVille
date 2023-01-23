@@ -13,6 +13,11 @@ while (PlayerName == "")
 }
 Player player = new Player(PlayerName, 0);
 Person person = new Person(0, "", 0, 0, "");
+People people = new People();
 player.CreatePlayer(PlayerName, 0);
+person.CreatePerson(0, "", 0, 0, "");
 Console.WriteLine("Thank you!");
 Console.WriteLine("Welcome to PeopleVille " + PlayerName);
+Console.ReadLine();
+Console.Clear(); 
+Console.WriteLine("Today's population of PeopleVille is: " + person.Population);

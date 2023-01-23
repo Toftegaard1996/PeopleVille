@@ -13,7 +13,8 @@ namespace PeopleVille.PeopleClasses
         int Money;
         int Insanity;
         string Job;
-        List<Person> Persons = new List<Person>();
+        public List<Person> Persons = new List<Person>();
+        public int Population;
 
         public Person(int age, string name, int money, int insanity, string job) 
         {
@@ -29,7 +30,7 @@ namespace PeopleVille.PeopleClasses
             int whichName = RNG.Range(0, 11);
             string[] jobs = { "Cashier", "Police", "Nurse", "Doctor", "Librarian", "Teacher", "WeaponCashier" };
             int whichJob = RNG.Range(0, 6);
-            int Population = RNG.Range(11, 22);
+            Population = RNG.Range(11, 22);
             
             age = RNG.Range(0, 100);
             name = names[whichName];
