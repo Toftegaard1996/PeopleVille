@@ -17,6 +17,10 @@
     <None Update="items.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Folder Include="ItemClass\" />
+    <Folder Include="LocationClass\" />
+    <Folder Include="PeopleClasses\NewFolder\" />
+    <Folder Include="People\" />
   </ItemGroup>
 
 </Project>
