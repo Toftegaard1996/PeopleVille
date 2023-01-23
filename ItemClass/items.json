@@ -1,0 +1,23 @@
+[
+  {
+    "Name": "Cigarettes",
+    "Value": 30,
+    "Eatable": false,
+    "Smokeable": true,
+    "Shootable": false
+  },
+  {
+    "Name": "Potato",
+    "Value": 50,
+    "Eatable": true,
+    "Smokeable": false,
+    "Shootable": false
+  },
+  {
+    "Name": "Homeless dog",
+    "Value": 0,
+    "Eatable": true,
+    "Smokeable": false,
+    "Shootable": false
+  }
+]
