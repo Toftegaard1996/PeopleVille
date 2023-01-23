@@ -8,7 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="People\" />
+    <Compile Remove="People\**" />
+    <EmbeddedResource Remove="People\**" />
+    <None Remove="People\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="items.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
