@@ -8,6 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="ItemClass\" />
+    <Folder Include="LocationClass\" />
+    <Folder Include="PeopleClasses\NewFolder\" />
     <Folder Include="People\" />
   </ItemGroup>
 

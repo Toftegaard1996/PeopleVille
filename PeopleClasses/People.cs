@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using PeopleVille.PeopleClasses;
 
 namespace PeopleVille.PeopleClasses
 {
@@ -9,24 +10,24 @@ namespace PeopleVille.PeopleClasses
     {
         int Age;
         string Name;
-        string Gender;
         int Money;
         int Insanity;
         string Job;
 
-        public int GainMoney()
+        public int GainMoney(int Incoming)
         {
+            Money += Incoming;
             return Money;
         }
         
-        public int LoseMoney()
+        public int LoseMoney(int outGoing)
         {
+            Money -= outGoing;
             return Money;
         }
-
-        public int SanityLevel() 
+        public void Tick()
         {
-            return Insanity;
+            Insanity--;
         }
     }
 }

@@ -8,13 +8,17 @@ namespace PeopleVille.PeopleClasses
     public class Player:People
     {
         public string Name;
-        public Player(string name)
+        public int Money;
+        public Player(string name, int money)
         {
             Name = name;
+            Money = money;
         }
-        public void CreatePlayer(string name) 
+        public Player CreatePlayer(string name, int money)
         {
-            
+            money = RNG.Range(100, 10000);
+            //Inventory and items
+            return new Player(name, money);
         }
         public void Interact() 
         {
