@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="PeopleClasses\NewFolder\**" />
+    <Compile Remove="People\**" />
+    <EmbeddedResource Remove="PeopleClasses\NewFolder\**" />
+    <EmbeddedResource Remove="People\**" />
     <Compile Remove="LocationClass\**" />
     <Compile Remove="PeopleClasses\NewFolder\**" />
     <Compile Remove="People\**" />
@@ -30,6 +34,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <Folder Include="ItemClass\" />
+
+    <Folder Include="LocationClass\" />
   </ItemGroup>
 
 </Project>
