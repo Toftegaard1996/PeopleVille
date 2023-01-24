@@ -22,7 +22,7 @@ namespace PeopleVille.buildingClass
             Name = name;
             Location = location;
             Category = category;
-            stash = JsonSerializer.Deserialize<List<Supplie>>(File.ReadAllText($"{System.IO.Directory.GetCurrentDirectory()}\\ItemClass\\items.json")).Where(c => c.Category == category).ToList();
+            stash = itemRetrive.supplierList().Where(c => c.Category == category).ToList();
         }
 
         public void viewItems()

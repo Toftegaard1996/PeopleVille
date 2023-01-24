@@ -20,6 +20,11 @@ namespace PeopleVille.PeopleClasses
         }
         public Player CreatePlayer(string name, int money, string location)
         {
+            for (int i = 0; i < RNG.Range(0, itemList.Count); i++)
+            {
+                int id = RNG.Range(0, itemList.Count);
+                items.Add(new item(itemList[id].Name, itemList[id].Value, itemList[id].Eatable, itemList[id].Smokeable, itemList[id].Shootable));
+            }
             money = RNG.Range(100, 10000);
             location = "";
             return new Player(name, money, location);

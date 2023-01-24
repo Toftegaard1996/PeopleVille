@@ -14,7 +14,7 @@ while (PlayerName == "")
     Console.WriteLine("You didn't enter your name, please try again");
     PlayerName = Console.ReadLine();
 }
-List<building> buildingList = JsonSerializer.Deserialize<List<building>>(File.ReadAllText($"{System.IO.Directory.GetCurrentDirectory()}\\buildingClass\\buildings.json"));
+List<building> buildingList = itemRetrive.buildingList();
 People people = new People();
 Player player = new Player(PlayerName, 0, "");
 Person person = new Person(0, "", 0, 0, "", "");
