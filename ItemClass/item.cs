@@ -9,6 +9,7 @@ namespace PeopleVille.ItemClass
     public class item
     {
         public string Name { get; set; }
+        public string Category { get; set; }
         public int Value { get; set; }
         public bool Eatable { get; set; }
         public bool Smokeable { get; set; }

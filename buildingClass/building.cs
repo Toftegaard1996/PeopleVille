@@ -14,6 +14,7 @@ namespace PeopleVille.buildingClass
         public string Name { get; set; }
         public string Location { get; set; }
         public string Category { get; set; }
+
         private List<Supplie> stash;
 
         public building(string name, string location, string category)
@@ -24,14 +25,30 @@ namespace PeopleVille.buildingClass
             stash = JsonSerializer.Deserialize<List<Supplie>>(File.ReadAllText($"{System.IO.Directory.GetCurrentDirectory()}\\ItemClass\\items.json")).Where(c => c.Category == category).ToList();
         }
 
-        public void Sell(Player player)
+        public void viewItems()
         {
-            
+            foreach (var item in stash)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        public void Sell(Player player, string item)
+        {
+            player.GainMoney(player.inventory.items.Find(c => c.Name == item).Value);
+            player.inventory.RemoveItem(item);
         }
 
         public void Buy(Player player, string item)
         {
-            player.LoseMoney(int.Parse(stash.Find(c => c.Name == item).Value));
+            player.LoseMoney(stash.Find(c => c.Name == item).Value);
+            player.inventory.AddItem(
+                stash.Find(c => c.Name == item).Name, 
+                stash.Find(c => c.Name == item).Value, 
+                stash.Find(c => c.Name == item).Eatable, 
+                stash.Find(c => c.Name == item).Smokeable, 
+                stash.Find(c => c.Name == item).Shootable
+                );
         }
     }
 }

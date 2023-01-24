@@ -21,5 +21,15 @@ namespace PeopleVille.ItemClass
                 items.Add(new item(itemList[id].Name, itemList[id].Value, itemList[id].Eatable, itemList[id].Smokeable, itemList[id].Shootable));
             }
         }
+
+        public void RemoveItem(string item)
+        {
+            items.Remove(items[items.FindIndex(c => c.Name == item)]);
+        }
+
+        public void AddItem(string item, int value, bool eatable, bool smokeable, bool shootable)
+        {
+            items.Add(new ItemClass.item(item, value, eatable, smokeable, shootable));
+        }
     }
 }

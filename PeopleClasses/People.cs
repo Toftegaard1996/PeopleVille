@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using PeopleVille.ItemClass;
 using PeopleVille.PeopleClasses;
 
 namespace PeopleVille.PeopleClasses
@@ -15,6 +16,7 @@ namespace PeopleVille.PeopleClasses
         string Job;
         string Location;
         public int TimeOfDay;
+        public inventory inventory = new inventory();
 
         public int GainMoney(int Incoming)
         {
