@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PeopleVille.PeopleClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,14 @@ namespace PeopleVille.buildingClass
 {
     public class Supplie
     {
-        private string Name;
-        private int Stock;
+        public string Name { get; set; }
+        public string Category { get; set; }
+        public string Value { get; set; }
+        public int Stock = RNG.Range(0,50);
+
+        public Supplie(string name)
+        {
+            Name = name;
+        }
     }
 }

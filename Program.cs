@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Text.Json;
 using PeopleVille;
+using PeopleVille.buildingClass;
 using PeopleVille.ItemClass;
 using PeopleVille.PeopleClasses;
-
 
 Console.WriteLine("Welcome to PeopleVille");
 Console.WriteLine("The little simulation village where you can interact, trade and walk around town");
@@ -18,6 +18,7 @@ Player player = new Player(PlayerName, 0);
 Person person = new Person(0, "", 0, 0, "");
 People people = new People();
 player.CreatePlayer(PlayerName, 0);
+List<building> buildingList = JsonSerializer.Deserialize<List<building>>(File.ReadAllText($"{System.IO.Directory.GetCurrentDirectory()}\\buildingClass\\buildings.json"));
 person.CreatePerson(0, "", 0, 0, "");
 Console.WriteLine("Thank you!");
 Console.WriteLine("Welcome to PeopleVille " + PlayerName);

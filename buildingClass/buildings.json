@@ -1,0 +1,37 @@
+[
+  {
+    "Name": "Supermarket",
+    "Location": "IDCVej",
+    "Category": "other"
+  },
+  {
+    "Name": "School",
+    "Location": "Cherry Row",
+    "Category": "none"
+  },
+  {
+    "Name": "Bank",
+    "Location": "General Row",
+    "Category": "none"
+  },
+  {
+    "Name": "Libary",
+    "Location": "Main Way",
+    "Category": "none"
+  },
+  {
+    "Name": "Hospital",
+    "Location": "Royalty Street",
+    "Category": "none"
+  },
+  {
+    "Name": "Politistation",
+    "Location": "Garden Way",
+    "Category": "none"
+  },
+  {
+    "Name": "Våbenbutik",
+    "Location": "Garden Way",
+    "Category": "none"
+  }
+]
