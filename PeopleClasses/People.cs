@@ -13,6 +13,8 @@ namespace PeopleVille.PeopleClasses
         int Money;
         int Insanity;
         string Job;
+        string Location;
+        public int TimeOfDay;
 
         public int GainMoney(int Incoming)
         {
@@ -27,6 +29,7 @@ namespace PeopleVille.PeopleClasses
         }
         public void Tick()
         {
+            TimeOfDay++;
             Insanity--;
         }
     }

@@ -14,13 +14,33 @@ while (PlayerName == "")
     Console.WriteLine("You didn't enter your name, please try again");
     PlayerName = Console.ReadLine();
 }
-Player player = new Player(PlayerName, 0);
-Person person = new Person(0, "", 0, 0, "");
 People people = new People();
+Player player = new Player(PlayerName, 0);
+Person person = new Person(0, "", 0, 0, "", "");
 player.CreatePlayer(PlayerName, 0);
-person.CreatePerson(0, "", 0, 0, "");
+person.CreatePerson(0, "", 0, 0, "", "");
 Console.WriteLine("Thank you!");
 Console.WriteLine("Welcome to PeopleVille " + PlayerName);
 Console.ReadLine();
 Console.Clear(); 
 Console.WriteLine("Today's population of PeopleVille is: " + person.Population);
+Console.WriteLine("The time is 8 am, it's time for work.");
+Console.WriteLine("Do you want to roll for a random job today? \n Yes \n No");
+string chooseToWork = Console.ReadLine();
+switch (chooseToWork)
+{
+    case "Yes":
+        for (int i = 0; i < 9; i++)
+        {
+            people.Tick();
+        }
+        Console.WriteLine("You've worked for 8 hours.");
+        Console.WriteLine("You have four left of the day.");
+        break;
+    case "No":
+        Console.WriteLine("Maybe tomorrow then");
+        break;
+}
+Console.WriteLine("So, what do you want to do now?");
+Console.WriteLine("Shopping \nTrading or talking with a villager \nWalk around \nSee your inventory");
+
