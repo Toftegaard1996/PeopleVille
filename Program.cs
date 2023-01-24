@@ -20,7 +20,7 @@ Person person = new Person(0, "", 0, 0, "", "");
 player.CreatePlayer(PlayerName, 0);
 person.CreatePerson(0, "", 0, 0, "", "");
 List<building> buildingList = JsonSerializer.Deserialize<List<building>>(File.ReadAllText($"{System.IO.Directory.GetCurrentDirectory()}\\buildingClass\\buildings.json"));
-person.CreatePerson(0, "", 0, 0, "");
+person.CreatePerson(0, "", 0, 0, "", "");
 Console.WriteLine("Thank you!");
 Console.WriteLine("Welcome to PeopleVille " + PlayerName);
 Console.ReadLine();
