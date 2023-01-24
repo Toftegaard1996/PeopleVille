@@ -8,8 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="PeopleClasses\NewFolder\**" />
     <Compile Remove="People\**" />
+    <EmbeddedResource Remove="PeopleClasses\NewFolder\**" />
     <EmbeddedResource Remove="People\**" />
+    <None Remove="PeopleClasses\NewFolder\**" />
     <None Remove="People\**" />
   </ItemGroup>
 
@@ -19,8 +22,6 @@
     </None>
     <Folder Include="ItemClass\" />
     <Folder Include="LocationClass\" />
-    <Folder Include="PeopleClasses\NewFolder\" />
-    <Folder Include="People\" />
   </ItemGroup>
 
 </Project>
