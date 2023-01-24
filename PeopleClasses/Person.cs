@@ -55,6 +55,8 @@ namespace PeopleVille.PeopleClasses
 
             for (int i = 0; i < Population; i++)
             {
+
+
                 Persons.Add(new Person(age, name, money, insanity, job, location));
             }
 
