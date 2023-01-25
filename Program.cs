@@ -24,7 +24,10 @@ person.CreatePerson(0, "", 0, 0, "", "");
 Console.WriteLine("Thank you!");
 Console.WriteLine("Welcome to PeopleVille " + PlayerName);
 Console.ReadLine();
-Console.Clear(); 
+Console.Clear();
+player.RandomEvent();
+
+
 Console.WriteLine("Today's population of PeopleVille is: " + person.Population);
 Console.WriteLine("The time is 8 am, it's time for work.");
 Console.WriteLine("Do you want to roll for a random job today? \n Yes \n No");
