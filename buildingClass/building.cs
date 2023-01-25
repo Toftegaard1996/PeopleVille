@@ -1,4 +1,5 @@
-﻿using PeopleVille.ItemClass;
+﻿using PeopleVille.Functions;
+using PeopleVille.ItemClass;
 using PeopleVille.PeopleClasses;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace PeopleVille.buildingClass
 {   
-    public class building
+    public class building:IBuilding
     {
         public string Name { get; set; }
         public string Location { get; set; }
@@ -25,22 +26,31 @@ namespace PeopleVille.buildingClass
             stash = itemRetrive.supplierList().Where(c => c.Category == category).ToList();
         }
 
-        public void viewItems()
+        public void ViewItems()
         {
             foreach (var item in stash)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(item.Name);
             }
         }
 
-        public void Sell(Player player, string item)
+        public void SellItem(Player player)
         {
-            player.GainMoney(player.inventory.items.Find(c => c.Name == item).Value);
-            player.inventory.RemoveItem(item);
+            foreach (var item in player.inventory.items)
+            {
+                Console.WriteLine(item.Name);
+            }
+            Console.WriteLine("Please type the name of the item you want to sell.");
+            string sellItem = Console.ReadLine();
+            player.GainMoney(player.inventory.items.Find(c => c.Name == sellItem).Value);
+            player.inventory.RemoveItem(sellItem);
         }
 
-        public void Buy(Player player, string item)
+        public void BuyItem(Player player)
         {
+            ViewItems();
+            Console.WriteLine("Please type the name of the item you want to buy.");
+            string item = Console.ReadLine();
             player.LoseMoney(stash.Find(c => c.Name == item).Value);
             player.inventory.AddItem(
                 stash.Find(c => c.Name == item).Name,
@@ -50,6 +60,28 @@ namespace PeopleVille.buildingClass
                 stash.Find(c => c.Name == item).Smokeable, 
                 stash.Find(c => c.Name == item).Shootable
                 );
+        }
+
+        public void InteractBuilding(Player player)
+        {
+            Console.WriteLine($"You entered the {Name} \n 1) Leave 2) Buy items 3) Sell your items");
+            int choice = int.Parse(Console.ReadLine());
+            switch (choice)
+            {
+                case 1:
+                    break;
+                case 2:
+                    BuyItem(player);
+                    break;
+                case 3:
+                    SellItem(player);
+                    break;
+            }
+        }
+
+        public void BuildingAction()
+        {
+            throw new NotImplementedException();
         }
     }
 }

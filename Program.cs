@@ -15,7 +15,7 @@ while (PlayerName == "")
     PlayerName = Console.ReadLine();
 }
 List<building> buildingList = itemRetrive.buildingList();
-Player player = new Player(PlayerName, 0, "");
+Player player = new Player();
 Person person = new Person(0, "", 0, 0, "", "");
 player.CreatePlayer(PlayerName, 0, buildingList);
 person.CreatePerson(0, "", 0, 0, "", buildingList);
@@ -55,7 +55,8 @@ switch (chooseToWork)
                 case 1:
                     for (int j = 0; j < person.Persons.Count; j++)
                     {
-                        Console.WriteLine(person.Persons[j].Name);
+                        if (person.Persons[j].Location == player.Location)
+                            Console.WriteLine(person.Persons[j].Name);
                     }
                     Console.WriteLine("\nType the name of the person you want to trade with.");
                     string personsss = Console.ReadLine();
@@ -72,7 +73,7 @@ switch (chooseToWork)
                     Console.Clear();
                     break;
                 case 3:
-                    Console.WriteLine("Your inventory, right");
+                    Console.WriteLine($"Your inventory, right | Wallet {player.Money}$ ");
                     for (int w = 0; w < player.inventory.items.Count(); w++)
                     {
                         Console.WriteLine($"{player.inventory.items[w].Name} | {player.inventory.items[w].Value}$");
@@ -81,6 +82,16 @@ switch (chooseToWork)
                     Console.Clear();
                     break;
                 case 4:
+                    Console.WriteLine("In your location there is.");
+                    for (int w = 0; w < buildingList.Count; w++)
+                    {
+                        if (buildingList[w].Location != player.Location)
+                            continue;
+                        Console.WriteLine(buildingList[w].Name);
+                    }
+                    Console.WriteLine("Type the name of the building you wanna enter.");
+                    string buildingName = Console.ReadLine();
+                    buildingList.Find(c => c.Name == buildingName).InteractBuilding(player);
                     break;
             }
             player.Tick();

@@ -66,7 +66,7 @@ namespace PeopleVille.PeopleClasses
                 }
                 location = buildingList[whichSpawn].Location;
 
-                for (int k = 0; k < RNG.Range(0, inventory.itemList.Count); k++)
+                for (int k = 0; k < RNG.Range(1, inventory.itemList.Count); k++)
                 {
                     int id = RNG.Range(0, inventory.itemList.Count);
                     personInventory.items.Add(new item(inventory.itemList[id].Name, inventory.itemList[id].Category, inventory.itemList[id].Value, inventory.itemList[id].Eatable, inventory.itemList[id].Smokeable, inventory.itemList[id].Shootable));

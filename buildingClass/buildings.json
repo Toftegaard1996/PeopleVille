@@ -2,12 +2,17 @@
   {
     "Name": "Supermarket",
     "Location": "IDCVej",
-    "Category": "other"
+    "Category": "Food"
   },
   {
     "Name": "School",
     "Location": "Cherry Row",
     "Category": "none"
+  },
+  {
+    "Name": "Musical Store",
+    "Location": "Cherry Row",
+    "Category": "instrument"
   },
   {
     "Name": "Bank",
@@ -32,6 +37,6 @@
   {
     "Name": "Våbenbutik",
     "Location": "Garden Way",
-    "Category": "none"
+    "Category": "Weapon"
   }
 ]
