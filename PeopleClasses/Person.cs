@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using PeopleVille.buildingClass;
 using PeopleVille.Functions;
 using PeopleVille.ItemClass;
 using PeopleVille.PeopleClasses;
@@ -34,19 +35,22 @@ namespace PeopleVille.PeopleClasses
             inventory = items;
         }
 
-        public Person CreatePerson(int age, string name, int money, int insanity, string job, string location) 
+        public Person CreatePerson(int age, string name, int money, int insanity, string job, List<building> buildingList) 
         {
             Population = RNG.Range(11, 22);
+            string location = "";
             for (int i = 0; i < Population; i++)
             {
                 string[] names = { "Karl", "Inge", "Lars", "Knud", "Grete", "Annabelle", "Ib", "Søren", "AnneMarie", "Gerda", "Kurt", "Lone", "Elisabeth", "Sofus", "Sofie", "Micheal" };
-                int whichName = RNG.Range(0, 11);
+                int whichName = RNG.Range(0, 16);
                 string[] jobs = { "Cashier", "Police", "Nurse", "Doctor", "Librarian", "Teacher", "WeaponCashier" };
                 int whichJob = RNG.Range(0, 6);
+                int whichSpawn = RNG.Range(0, buildingList.Count);
 
                 age = RNG.Range(0, 100);
                 name = names[whichName];
                 money = RNG.Range(100, 10000);
+                var personInventory = new inventory();
                 insanity = RNG.Range(0, 100);
                 if (age <= 15 && age > 5)
                 {
@@ -60,8 +64,8 @@ namespace PeopleVille.PeopleClasses
                 {
                     job = jobs[whichJob];
                 }
+                location = buildingList[whichSpawn].Location;
 
-                var personInventory = new inventory();
                 for (int k = 0; k < RNG.Range(0, inventory.itemList.Count); k++)
                 {
                     int id = RNG.Range(0, inventory.itemList.Count);

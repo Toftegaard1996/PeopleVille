@@ -17,10 +17,12 @@ while (PlayerName == "")
 List<building> buildingList = itemRetrive.buildingList();
 Player player = new Player(PlayerName, 0, "");
 Person person = new Person(0, "", 0, 0, "", "");
-player.CreatePlayer(PlayerName, 0,"");
-person.CreatePerson(0, "", 0, 0, "", "");
+player.CreatePlayer(PlayerName, 0, buildingList);
+person.CreatePerson(0, "", 0, 0, "", buildingList);
 Console.WriteLine("Thank you!");
 Console.WriteLine("Welcome to PeopleVille " + PlayerName);
+Console.WriteLine("Here's your stats!");
+Console.WriteLine($"You have {player.Money} coins | You spawn at {player.Location}");
 Console.ReadLine();
 Console.Clear();
 //While løkke til at starte ny dag
