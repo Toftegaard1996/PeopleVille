@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using PeopleVille.ItemClass;
 using PeopleVille.PeopleClasses;
+using PeopleVille.Functions;
+using System.Reflection.Metadata;
 
 namespace PeopleVille.PeopleClasses
 {
@@ -17,6 +19,8 @@ namespace PeopleVille.PeopleClasses
         string Location;
         public int TimeOfDay;
         public inventory inventory = new inventory();
+        
+        
 
         public int GainMoney(int Incoming)
         {
@@ -33,6 +37,17 @@ namespace PeopleVille.PeopleClasses
         {
             TimeOfDay++;
             Insanity--;
+        }
+
+        public void RandomEvent(Person person) 
+        {
+            EventPusblisher subscribeEvent = new EventPusblisher();
+            subscribeEvent.EventCompleted += subscribeEvent_EventCompleted;
+            subscribeEvent.EventStart(person);
+        }
+
+        public static void subscribeEvent_EventCompleted() 
+        {
         }
     }
 }
