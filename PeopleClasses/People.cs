@@ -136,6 +136,7 @@ namespace PeopleVille.PeopleClasses
             );
             inventory.RemoveItem(yourItem);
             Console.WriteLine($"You and {person.Name} has successfully traded.");
+        }
 
         public void RandomEvent(Person person) 
         {
