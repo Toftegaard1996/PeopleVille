@@ -43,7 +43,8 @@ namespace PeopleVille.buildingClass
         {
             player.LoseMoney(stash.Find(c => c.Name == item).Value);
             player.inventory.AddItem(
-                stash.Find(c => c.Name == item).Name, 
+                stash.Find(c => c.Name == item).Name,
+                stash.Find(c => c.Name == item).Category,
                 stash.Find(c => c.Name == item).Value, 
                 stash.Find(c => c.Name == item).Eatable, 
                 stash.Find(c => c.Name == item).Smokeable, 

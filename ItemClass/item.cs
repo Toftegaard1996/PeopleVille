@@ -20,9 +20,10 @@ namespace PeopleVille.ItemClass
 
         }
 
-        public item(string name, int value, bool eatable, bool smokeable, bool shootable)
+        public item(string name, string category,int value, bool eatable, bool smokeable, bool shootable)
         {
             Name = name;
+            Category = category;
             Value = value;
             Eatable = eatable;
             Smokeable = smokeable;

@@ -22,7 +22,7 @@ namespace PeopleVille.ItemClass
 
         public static List<building> buildingList()
         {
-            return JsonSerializer.Deserialize<List<building>>(File.ReadAllText($"{System.IO.Directory.GetCurrentDirectory()}\\ItemClass\\items.json"));
+            return JsonSerializer.Deserialize<List<building>>(File.ReadAllText($"{System.IO.Directory.GetCurrentDirectory()}\\buildingClass\\buildings.json"));
         }
     }
 }
