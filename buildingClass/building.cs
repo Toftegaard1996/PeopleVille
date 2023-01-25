@@ -22,7 +22,7 @@ namespace PeopleVille.buildingClass
             Name = name;
             Location = location;
             Category = category;
-            stash = JsonSerializer.Deserialize<List<Supplie>>(File.ReadAllText($"{System.IO.Directory.GetCurrentDirectory()}\\ItemClass\\items.json")).Where(c => c.Category == category).ToList();
+            stash = itemRetrive.supplierList().Where(c => c.Category == category).ToList();
         }
 
         public void viewItems()
@@ -43,7 +43,8 @@ namespace PeopleVille.buildingClass
         {
             player.LoseMoney(stash.Find(c => c.Name == item).Value);
             player.inventory.AddItem(
-                stash.Find(c => c.Name == item).Name, 
+                stash.Find(c => c.Name == item).Name,
+                stash.Find(c => c.Name == item).Category,
                 stash.Find(c => c.Name == item).Value, 
                 stash.Find(c => c.Name == item).Eatable, 
                 stash.Find(c => c.Name == item).Smokeable, 

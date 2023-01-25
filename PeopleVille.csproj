@@ -33,7 +33,6 @@
     <None Update="items.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <Folder Include="ItemClass\" />
   </ItemGroup>
 
 </Project>
