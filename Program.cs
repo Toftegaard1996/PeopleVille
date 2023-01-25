@@ -24,6 +24,9 @@ Console.WriteLine("Welcome to PeopleVille " + PlayerName);
 Console.ReadLine();
 Console.Clear();
 //While løkke til at starte ny dag
+player.RandomEvent();
+
+
 Console.WriteLine("Today's population of PeopleVille is: " + person.Population);
 Console.WriteLine("The time is 8 am, it's time for work.");
 Console.WriteLine("Do you want to work today? If yes, you'll be assigned a random job \nYes \nNo");
