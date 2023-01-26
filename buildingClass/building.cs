@@ -70,8 +70,19 @@ namespace PeopleVille.buildingClass
 
         public void InteractBuilding(Player player)
         {
-            Console.WriteLine($"You entered the {Name} \n 1) Leave 2) Buy items 3) Sell your items");
-            int choice = int.Parse(Console.ReadLine());
+            int choice = 0;
+            try
+            {
+                Console.WriteLine($"You entered the {Name} \n 1) Leave 2) Buy items 3) Sell your items");
+                choice = int.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("That is not a number");
+                Console.WriteLine("Please type the number of your wished action");
+                choice = int.Parse(Console.ReadLine());
+            }
+            
             switch (choice)
             {
                 case 1:
