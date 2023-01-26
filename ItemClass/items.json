@@ -94,5 +94,13 @@
     "Eatable": false,
     "Smokeable": false,
     "Shootable": false
+  },
+  {
+    "Name": "Monkey",
+    "Category": "Food",
+    "Value": 586,
+    "Eatable": false,
+    "Smokeable": false,
+    "Shootable": false
   }
 ]
