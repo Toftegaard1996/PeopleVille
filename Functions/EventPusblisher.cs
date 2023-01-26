@@ -42,18 +42,20 @@ namespace PeopleVille.Functions
                     }
                     break;
                 case 2:
+                    string luckyPerson = "";
                     for (int i = 0; i < person.Persons.Count(); i++)
                     {
                         if (person.Persons[i].Job == "Jobless" && person.Persons[i].Age >= 65)
                         {
-                            Console.WriteLine("CRASH!");
-                            Console.WriteLine("Sounds like someone crashed their car.");
-                            Console.WriteLine("They're being rushed to the hospital");
+                            luckyPerson = person.Persons[i].Name;
                             person.Persons[i].Location = buildingList.Find(c => c.Name == "Hospital").Location;
-
                         }
 
                     }
+                    Console.WriteLine("CRASH!");
+                    Console.WriteLine("Sounds like someone crashed their car.");
+                    Console.WriteLine($"{luckyPerson} is being rushed to the hospital");
+                    
                     break;
                 case 3:
                     Console.WriteLine("BOOM");
@@ -77,7 +79,7 @@ namespace PeopleVille.Functions
                     break;
                 case 5:
                     string personName = person.Persons[RNG.Range(1, person.Persons.Count)].Name;
-                    Console.WriteLine($"A unicorn just ran through the city. and stumped down {personName}");
+                    Console.WriteLine($"A unicorn just ran through the city and stumped down {personName}");
                     person.Persons.Remove(person.Persons.Find(c => c.Name == personName));
                     break;
             }

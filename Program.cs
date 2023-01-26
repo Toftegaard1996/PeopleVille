@@ -59,8 +59,11 @@ while (StartNewDay)
                     {
                         player.Tick();
                     }
+                    Console.Clear();
                     Console.WriteLine("You've worked for 8 hours.");
                     Console.WriteLine("You have four left of the day.");
+                    Console.ReadLine();
+                    Console.Clear();
                     break;
                 case "No":
                     Console.WriteLine("Maybe tomorrow then");
