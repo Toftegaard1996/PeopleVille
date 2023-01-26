@@ -32,6 +32,11 @@ while (StartNewDay)
 {
     Console.WriteLine("Ready to start a new day in PeopleVille? \nYes \nNo");
     string ChooseNewDay = Console.ReadLine();
+    while (ChooseNewDay == "")
+    {
+        Console.WriteLine("Please type the building you want to enter.");
+        ChooseNewDay = Console.ReadLine();
+    }
     switch (ChooseNewDay)
     {
         case "Yes":
@@ -41,6 +46,11 @@ while (StartNewDay)
             Console.WriteLine("The time is 8 am, it's time for work.");
             Console.WriteLine("Do you want to work today? If yes, you'll be assigned a random job \nYes \nNo");
             string chooseToWork = Console.ReadLine();
+            while (chooseToWork == "")
+            {
+                Console.WriteLine("Please type the building you want to enter.");
+                chooseToWork = Console.ReadLine();
+            }
             switch (chooseToWork)
             {
                 case "Yes":

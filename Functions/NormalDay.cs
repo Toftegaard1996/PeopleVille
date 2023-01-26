@@ -12,9 +12,22 @@ namespace PeopleVille.Functions
     {
         public void GivingDay(Player player, Person person, List<building> buildingList) 
         {
-            Console.WriteLine("So, what do you want to do now?");
-            Console.WriteLine("1: Trading or talking with a villager \n2: Walk around \n3: See your inventory \n4: Shopping \n5: Go to a specific building");
-            int whatNext = int.Parse(Console.ReadLine());
+            int whatNext = 0;
+            try
+            {
+                Console.WriteLine("So, what do you want to do now?");
+                Console.WriteLine("Type the number of the wished action:");
+                Console.WriteLine("1: Trading or talking with a villager \n2: Walk around \n3: See your inventory \n4: Shopping \n5: Go to a specific building");
+                whatNext = int.Parse(Console.ReadLine());
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("That is not a number");
+                Console.WriteLine("Please type the number of your wished action");
+                whatNext = int.Parse(Console.ReadLine());
+            }
+            Console.Clear();
             switch (whatNext)
             {
                 case 1:
@@ -25,6 +38,11 @@ namespace PeopleVille.Functions
                     }
                     Console.WriteLine("\nType the name of the person you want to trade with.");
                     string whichPerson = Console.ReadLine();
+                    while (whichPerson == "")
+                    {
+                        Console.WriteLine("Please type the name of the person you want to trade with.");
+                        whichPerson = Console.ReadLine();
+                    }
                     player.StartTrading(person.Persons.Find(c => c.Name == whichPerson));
                     break;
                 case 2:
@@ -71,6 +89,11 @@ namespace PeopleVille.Functions
                     }
                     Console.WriteLine("Type the name of the building you want to go to.");
                     string placeToGo = Console.ReadLine();
+                    while (placeToGo == "")
+                    {
+                        Console.WriteLine("Please type the building you want to enter.");
+                        placeToGo = Console.ReadLine();
+                    }
                     player.Location = buildingList.Find(c => c.Name == placeToGo).Location;
                     Console.WriteLine($"You have now arrived at {player.Location} where the {buildingList.Find(c => c.Location == player.Location).Name} is");
                     Console.WriteLine("Other people in this area are:");
