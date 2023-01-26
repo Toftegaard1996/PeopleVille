@@ -30,7 +30,7 @@ namespace PeopleVille.buildingClass
         {
             foreach (var item in stash)
             {
-                Console.WriteLine(item.Name);
+                Console.WriteLine($"{item.Name} | Stock: {item.Stock}");
             }
         }
 
@@ -44,22 +44,28 @@ namespace PeopleVille.buildingClass
             string sellItem = Console.ReadLine();
             player.GainMoney(player.inventory.items.Find(c => c.Name == sellItem).Value);
             player.inventory.RemoveItem(sellItem);
+            Console.WriteLine($"You succesfully sold {sellItem} to the {Name}");
         }
 
         public void BuyItem(Player player)
         {
-            ViewItems();
-            Console.WriteLine("Please type the name of the item you want to buy.");
-            string item = Console.ReadLine();
-            player.LoseMoney(stash.Find(c => c.Name == item).Value);
-            player.inventory.AddItem(
-                stash.Find(c => c.Name == item).Name,
-                stash.Find(c => c.Name == item).Category,
-                stash.Find(c => c.Name == item).Value, 
-                stash.Find(c => c.Name == item).Eatable, 
-                stash.Find(c => c.Name == item).Smokeable, 
-                stash.Find(c => c.Name == item).Shootable
-                );
+            if (stash.Count != 0)
+            {
+                ViewItems();
+                Console.WriteLine("Please type the name of the item you want to buy.");
+                string item = Console.ReadLine();
+                player.LoseMoney(stash.Find(c => c.Name == item).Value);
+                player.inventory.AddItem(
+                    stash.Find(c => c.Name == item).Name,
+                    stash.Find(c => c.Name == item).Category,
+                    stash.Find(c => c.Name == item).Value,
+                    stash.Find(c => c.Name == item).Eatable,
+                    stash.Find(c => c.Name == item).Smokeable,
+                    stash.Find(c => c.Name == item).Shootable
+                    );
+                stash.Find(c => c.Name == item).Stock--;
+            }
+            else { Console.WriteLine($"The {Name} does not have anything to sell."); return; }
         }
 
         public void InteractBuilding(Player player)
