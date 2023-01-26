@@ -9,7 +9,7 @@ using PeopleVille.PeopleClasses;
 
 namespace PeopleVille.PeopleClasses
 {
-    public class Person:People, IWorking
+    public class Person:People
     {
         public List<Person> Persons = new List<Person>();
         public int Population;
@@ -43,7 +43,7 @@ namespace PeopleVille.PeopleClasses
             {
                 string[] names = { "Karl", "Inge", "Lars", "Knud", "Grete", "Annabelle", "Ib", "Søren", "AnneMarie", "Gerda", "Kurt", "Lone", "Elisabeth", "Sofus", "Sofie", "Micheal" };
                 int whichName = RNG.Range(0, 16);
-                string[] jobs = { "Cashier", "Police", "Nurse", "Doctor", "Librarian", "Teacher", "WeaponCashier" };
+                string[] jobs = { "Cashier", "Police", "Nurse", "Doctor", "Librarian", "Teacher", "WeaponCashier", "MusicCashier", "Banker" };
                 int whichJob = RNG.Range(0, 6);
                 int whichSpawn = RNG.Range(0, buildingList.Count);
 
@@ -77,35 +77,99 @@ namespace PeopleVille.PeopleClasses
             return new Person(age, name, money, insanity, job, location);
         }
 
-        public void StartWorking() 
+        public override void Working(List<building> buildingList) 
         {
             for (int i = 0; i < Persons.Count(); i++)
             {
                 switch (Persons[i].Job)
                 {
-                    case "Cashier": 
+                    case "Cashier":
+                        if (TimeOfDay >= 2 && TimeOfDay <= 9)
+                        {
+                            Persons[i].Location = buildingList.Find(c => c.Location == "IDCVej").Location;
+                        }
+                        else
+                        {
+                            int whereNow = RNG.Range(0, buildingList.Count());
+                            Persons[i].Location = buildingList.Find(c => c.Location == buildingList[whereNow].Location).Location;
+                        }
                         break;
                     case "Police":
+                        Persons[i].Location = buildingList.Find(c => c.Location == "Garden Way").Location;
                         break;
                     case "Nurse":
+                        Persons[i].Location = buildingList.Find(c => c.Location == "Royalty Street").Location;
                         break;
                     case "Doctor":
+                        Persons[i].Location = buildingList.Find(c => c.Location == "Royalty Street").Location;
                         break;
                     case "Librarian":
+                        if (TimeOfDay >= 2 && TimeOfDay <= 9)
+                        {
+                            Persons[i].Location = buildingList.Find(c => c.Location == "Main Way").Location;
+                        }
+                        else
+                        {
+                            int whereNow = RNG.Range(0, buildingList.Count());
+                            Persons[i].Location = buildingList.Find(c => c.Location == buildingList[whereNow].Location).Location;
+                        }
                         break;
                     case "Teacher":
+                        if (TimeOfDay >= 0 && TimeOfDay <= 7)
+                        {
+                            Persons[i].Location = buildingList.Find(c => c.Location == "Cherry Row").Location;
+                        }
+                        else
+                        {
+                            int whereNow = RNG.Range(0, buildingList.Count());
+                            Persons[i].Location = buildingList.Find(c => c.Location == buildingList[whereNow].Location).Location;
+                        }
                         break;
                     case "WeaponCashier":
+                        if (TimeOfDay >= 2 && TimeOfDay <= 9)
+                        {
+                            Persons[i].Location = buildingList.Find(c => c.Location == "Garden Way").Location;
+                        }
+                        else
+                        {
+                            int whereNow = RNG.Range(0, buildingList.Count());
+                            Persons[i].Location = buildingList.Find(c => c.Location == buildingList[whereNow].Location).Location;
+                        }
+                        break;
+                    case "Student":
+                        if (TimeOfDay >= 0 && TimeOfDay <= 7)
+                        {
+                            Persons[i].Location = buildingList.Find(c => c.Location == "Cherry Row").Location;
+                        }
+                        else
+                        {
+                            int whereNow = RNG.Range(0, buildingList.Count());
+                            Persons[i].Location = buildingList.Find(c => c.Location == buildingList[whereNow].Location).Location;
+                        }
+                        break;
+                    case "MusicCashier":
+                        if (TimeOfDay >= 2 && TimeOfDay <= 9)
+                        {
+                            Persons[i].Location = buildingList.Find(c => c.Location == "Cherry Row").Location;
+                        }
+                        else
+                        {
+                            int whereNow = RNG.Range(0, buildingList.Count());
+                            Persons[i].Location = buildingList.Find(c => c.Location == buildingList[whereNow].Location).Location;
+                        }
+                        break;
+                    case "Banker":
+                        if (TimeOfDay >= 2 && TimeOfDay <= 9)
+                        {
+                            Persons[i].Location = buildingList.Find(c => c.Location == "General Row").Location;
+                        }
+                        else
+                        {
+                            int whereNow = RNG.Range(0, buildingList.Count());
+                            Persons[i].Location = buildingList.Find(c => c.Location == buildingList[whereNow].Location).Location;
+                        }
                         break;
                 }
-            }
-        }
-
-        public void StopWorking() 
-        {
-            for (int i = 0; i < Persons.Count(); i++)
-            {
-                //Go to random location
             }
         }
     }

@@ -9,10 +9,11 @@ using PeopleVille.ItemClass;
 using PeopleVille.PeopleClasses;
 using PeopleVille.Functions;
 using System.Reflection.Metadata;
+using PeopleVille.buildingClass;
 
 namespace PeopleVille.PeopleClasses
 {
-    public class People:ITrading
+    public abstract class People:ITrading, IWorking
     {
         public int Age;
         public string Name;
@@ -138,15 +139,20 @@ namespace PeopleVille.PeopleClasses
             Console.WriteLine($"You and {person.Name} has successfully traded.");
         }
 
-        public void RandomEvent(Person person) 
+        public void RandomEvent(Person person, List<building> buildingList) 
         {
             EventPusblisher subscribeEvent = new EventPusblisher();
             subscribeEvent.EventCompleted += subscribeEvent_EventCompleted;
-            subscribeEvent.EventStart(person);
+            subscribeEvent.EventStart(person, buildingList);
         }
 
         public static void subscribeEvent_EventCompleted() 
         {
+        }
+
+        public virtual void Working(List<building> buildingList)
+        {
+            Console.WriteLine("It's time for work");
         }
     }
 }

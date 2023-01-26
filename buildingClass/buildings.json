@@ -30,12 +30,13 @@
     "Category": "none"
   },
   {
-    "Name": "Police station",
+
+    "Name": "Policestation",
     "Location": "Garden Way",
     "Category": "none"
   },
   {
-    "Name": "Weaponshop",
+    "Name": "Weapon store",
     "Location": "Garden Way",
     "Category": "Weapon"
   }
