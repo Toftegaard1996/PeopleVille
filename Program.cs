@@ -37,6 +37,7 @@ while (StartNewDay)
         Console.WriteLine("Please type the building you want to enter.");
         ChooseNewDay = Console.ReadLine();
     }
+    Console.Clear();
     switch (ChooseNewDay)
     {
         case "Yes":
@@ -85,6 +86,9 @@ while (StartNewDay)
                 Console.ReadLine();
                 Console.Clear();
             }
+            Console.WriteLine("The day is now over in PeopleVille and everyone is going home to sleep");
+            Console.ReadLine();
+            Console.Clear();
             break;
         
         //End your time at PeopleVille
