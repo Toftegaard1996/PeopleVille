@@ -33,6 +33,7 @@ while (StartNewDay)
     switch (ChooseNewDay)
     {
         case "Yes":
+            player.TimeOfDay = 0;
             player.RandomEvent(person, buildingList);
             Console.WriteLine("Today's population of PeopleVille is: " + person.Population);
             Console.WriteLine("The time is 8 am, it's time for work.");
@@ -134,8 +135,8 @@ while (StartNewDay)
                     break;
             }
             //End of normal 8 hour workday, 4 left of the day
-            Console.WriteLine("So, what do you want to do now?");
-            Console.WriteLine("Shopping \nTrading or talking with a villager \nWalk around \nSee your inventory");
+            Console.ReadLine();
+            Console.Clear();
             break;
         
         //End your time at PeopleVille
