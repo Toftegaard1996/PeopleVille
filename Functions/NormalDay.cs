@@ -38,11 +38,29 @@ namespace PeopleVille.Functions
                     }
                     Console.WriteLine("\nType the name of the person you want to trade with.");
                     string whichPerson = Console.ReadLine();
-                    while (whichPerson == "")
+                    int rightName = 0;
+                    while (rightName == 0)
                     {
-                        Console.WriteLine("Please type the name of the person you want to trade with.");
-                        whichPerson = Console.ReadLine();
+                        for (int r = 0; r < person.Persons.Count(); r++)
+                        {
+                            if (person.Persons[r].Name == whichPerson)
+                            {
+                                rightName++;
+                            }
+                        }
+                        if (rightName == 0)
+                        {
+                            Console.WriteLine("You wrote the wrong name, try again");
+                            whichPerson = Console.ReadLine();
+                        }
+                        while (whichPerson == "")
+                        {
+                            Console.WriteLine("Please type the name of the person you want to trade with.");
+                            whichPerson = Console.ReadLine();
+                            
+                        }
                     }
+                    
                     player.StartTrading(person.Persons.Find(c => c.Name == whichPerson));
                     break;
                 case 2:
@@ -70,10 +88,27 @@ namespace PeopleVille.Functions
                     }
                     Console.WriteLine("Type the name of the building you wanna enter.");
                     string buildingName = Console.ReadLine();
-                    while (buildingName == "")
+                    int rightBuilding = 0;
+                    while (rightBuilding == 0)
                     {
-                        Console.WriteLine("Please type the building you want to enter.");
-                        buildingName = Console.ReadLine();
+                        for (int r = 0; r < buildingList.Count; r++)
+                        {
+                            if (buildingList[r].Name == buildingName)
+                            {
+                                rightBuilding++;
+                            }
+                        }
+                        if (rightBuilding == 0)
+                        {
+                            Console.WriteLine("You wrote the wrong building name, try again");
+                            buildingName = Console.ReadLine();
+                        }
+                        while (buildingName == "")
+                        {
+                            Console.WriteLine("Please type the name of the you want to enter.");
+                            buildingName = Console.ReadLine();
+
+                        }
                     }
                     buildingList.Find(c => c.Name == buildingName).InteractBuilding(player);
                     break;
@@ -89,10 +124,27 @@ namespace PeopleVille.Functions
                     }
                     Console.WriteLine("Type the name of the building you want to go to.");
                     string placeToGo = Console.ReadLine();
-                    while (placeToGo == "")
+                    int rightPlaceToGo = 0;
+                    while (rightPlaceToGo == 0)
                     {
-                        Console.WriteLine("Please type the building you want to enter.");
-                        placeToGo = Console.ReadLine();
+                        for (int r = 0; r < buildingList.Count(); r++)
+                        {
+                            if (buildingList[r].Name == placeToGo)
+                            {
+                                rightPlaceToGo++;
+                            }
+                        }
+                        if (rightPlaceToGo == 0)
+                        {
+                            Console.WriteLine("You wrote the wrong name, try again");
+                            placeToGo = Console.ReadLine();
+                        }
+                        while (placeToGo == "")
+                        {
+                            Console.WriteLine("Please type the name of the person you want to trade with.");
+                            placeToGo = Console.ReadLine();
+
+                        }
                     }
                     player.Location = buildingList.Find(c => c.Name == placeToGo).Location;
                     Console.WriteLine($"You have now arrived at {player.Location} where the {buildingList.Find(c => c.Location == player.Location).Name} is");
