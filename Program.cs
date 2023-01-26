@@ -69,7 +69,10 @@ while (StartNewDay)
                                 }
                                 Console.WriteLine("\nType the name of the person you want to trade with.");
                                 string whichPerson = Console.ReadLine();
-                                player.StartTrading(person.Persons.Find(c => c.Name == whichPerson));
+                                if (person.Persons.Find(c => c.Name == whichPerson).Location == player.Location)
+                                    player.StartTrading(person.Persons.Find(c => c.Name == whichPerson));
+                                else
+                                    Console.WriteLine($"{whichPerson} is not in your area.");
                                 break;
                             case 2:
                                 Console.WriteLine("You walk around the town and see the different buildings");
