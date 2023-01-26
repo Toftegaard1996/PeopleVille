@@ -43,7 +43,7 @@ while (StartNewDay)
                 case "Yes":
                     for (int i = 0; i < 9; i++)
                     {
-                        player.Tick();
+                      player.Tick();
                     }
                     Console.WriteLine("You've worked for 8 hours.");
                     Console.WriteLine("You have four left of the day.");
@@ -52,6 +52,7 @@ while (StartNewDay)
                     Console.WriteLine("Maybe tomorrow then");
                     Console.ReadLine();
                     Console.Clear();
+                    
                     for (int i = 0; i < 9; i++)
                     {
                         Console.WriteLine("So, what do you want to do now?");
@@ -94,6 +95,11 @@ while (StartNewDay)
                                 }
                                 Console.WriteLine("Type the name of the building you wanna enter.");
                                 string buildingName = Console.ReadLine();
+                                while (buildingName == "")
+                                {
+                                    Console.WriteLine("Please type the building you want to enter.");
+                                    buildingName = Console.ReadLine();
+                                }
                                 buildingList.Find(c => c.Name == buildingName).InteractBuilding(player);
                                 break;
                             case 5:
