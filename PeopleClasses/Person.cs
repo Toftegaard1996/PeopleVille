@@ -41,14 +41,14 @@ namespace PeopleVille.PeopleClasses
             string location = "";
             for (int i = 0; i < Population; i++)
             {
-                string[] names = { "Karl", "Inge", "Lars", "Knud", "Grete", "Annabelle", "Ib", "Søren", "AnneMarie", "Gerda", "Kurt", "Lone", "Elisabeth", "Sofus", "Sofie", "Micheal" };
+                string[] names = { "Karl", "Inge", "Lars", "Knud", "Grete", "Annabelle", "Ib", "Søren", "AnneMarie", "Gerda", "Kurt", "Lone", "Elisabeth", "Sofus", "Sofie", "Micheal", "Martin", "Henrik", "Adam", "Gertrud", "Karen", "Loke" };
                 int whichName = RNG.Range(0, 16);
                 string[] jobs = { "Cashier", "Police", "Nurse", "Doctor", "Librarian", "Teacher", "WeaponCashier", "MusicCashier", "Banker" };
                 int whichJob = RNG.Range(0, 6);
                 int whichSpawn = RNG.Range(0, buildingList.Count);
 
                 age = RNG.Range(0, 100);
-                name = names[whichName];
+                name = names[i];
                 money = RNG.Range(100, 10000);
                 var personInventory = new inventory();
                 insanity = RNG.Range(0, 100);
