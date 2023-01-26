@@ -82,10 +82,6 @@ namespace PeopleVille.Functions
                         }
                     }
                     break;
-                    player.Tick();
-                    person.Working(buildingList);
-                    Console.ReadLine();
-                    Console.Clear();
             }   
         }
     }
