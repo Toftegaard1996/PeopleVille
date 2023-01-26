@@ -12,7 +12,6 @@ namespace PeopleVille.Functions
         void BuyItem(Player player);
         void SellItem(Player player);
         void ViewItems();
-        void BuildingAction();
         void InteractBuilding(Player player);
     }
 }

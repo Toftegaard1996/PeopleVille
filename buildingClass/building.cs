@@ -84,10 +84,5 @@ namespace PeopleVille.buildingClass
                     break;
             }
         }
-
-        public void BuildingAction()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

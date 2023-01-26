@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using PeopleVille.buildingClass;
@@ -26,7 +27,7 @@ namespace PeopleVille.Functions
                     Console.Clear();
                 }
             }
-            int whichEvent = RNG.Range(1, 2);
+            int whichEvent = RNG.Range(1, 5);
             switch (whichEvent)
             {
                 case 1:
@@ -54,11 +55,37 @@ namespace PeopleVille.Functions
 
                     }
                     break;
+                case 3:
+                    Console.WriteLine("BOOM");
+                    Console.WriteLine($"A car just exploded. \n And killed");
+                    for (int i = 0; i < RNG.Range(1,21); i++)
+                    {
+                        Console.WriteLine(person.Persons[i].Name);
+                        person.Persons.Remove(person.Persons[i]);
+                    }
+                    Console.WriteLine("Look how the paramedics is rushing to the killed people");
+                    for (int i = 0; i < person.Persons.Count(); i++)
+                    {
+                        if (person.Persons[i].Job == "Doctor" || person.Persons[i].Job == "Nurse")
+                        {
+                            Console.WriteLine(person.Persons[i].Name);
+                        }
+                    }
+                    break;
+                case 4:
+                    Console.WriteLine($"Inge just robbed {person.Persons[RNG.Range(1, person.Persons.Count)].Name}");
+                    break;
+                case 5:
+                    string personName = person.Persons[RNG.Range(1, person.Persons.Count)].Name;
+                    Console.WriteLine($"A unicorn just ran through the city. and stumped down {personName}");
+                    person.Persons.Remove(person.Persons.Find(c => c.Name == personName));
+                    break;
             }
 
 
             OnEventCompletion();
         }
+
         protected virtual void OnEventCompletion() 
         {
             EventCompleted?.Invoke();

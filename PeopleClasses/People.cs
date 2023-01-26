@@ -23,8 +23,6 @@ namespace PeopleVille.PeopleClasses
         public string Location;
         public int TimeOfDay;
         public inventory inventory = new inventory();
-        
-        
 
         public int GainMoney(int Incoming)
         {
