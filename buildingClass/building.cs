@@ -54,16 +54,20 @@ namespace PeopleVille.buildingClass
                 ViewItems();
                 Console.WriteLine("Please type the name of the item you want to buy.");
                 string item = Console.ReadLine();
-                player.LoseMoney(stash.Find(c => c.Name == item).Value);
-                player.inventory.AddItem(
-                    stash.Find(c => c.Name == item).Name,
-                    stash.Find(c => c.Name == item).Category,
-                    stash.Find(c => c.Name == item).Value,
-                    stash.Find(c => c.Name == item).Eatable,
-                    stash.Find(c => c.Name == item).Smokeable,
-                    stash.Find(c => c.Name == item).Shootable
-                    );
-                stash.Find(c => c.Name == item).Stock--;
+                if (stash.Find(c => c.Name == item).Stock != 0)
+                {
+                    player.LoseMoney(stash.Find(c => c.Name == item).Value);
+                    player.inventory.AddItem(
+                        stash.Find(c => c.Name == item).Name,
+                        stash.Find(c => c.Name == item).Category,
+                        stash.Find(c => c.Name == item).Value,
+                        stash.Find(c => c.Name == item).Eatable,
+                        stash.Find(c => c.Name == item).Smokeable,
+                        stash.Find(c => c.Name == item).Shootable
+                        );
+                    stash.Find(c => c.Name == item).Stock--;
+                }
+                else { Console.WriteLine($"There are no more {Name}'s in stock"); }
             }
             else { Console.WriteLine($"The {Name} does not have anything to sell."); return; }
         }
