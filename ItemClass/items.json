@@ -16,9 +16,9 @@
     "Shootable": false
   },
   {
-    "Name": "Homeless dog",
+    "Name": "Snake",
     "Category": "Animal",
-    "Value": 0,
+    "Value": 340,
     "Eatable": true,
     "Smokeable": false,
     "Shootable": false
@@ -56,7 +56,7 @@
     "Shootable": false
   },
   {
-    "Name": "Feet pics",
+    "Name": "Pictures",
     "Category": "other",
     "Value": 50,
     "Eatable": false,
@@ -88,16 +88,16 @@
     "Shootable": false
   },
   {
-    "Name": "Zebra you stole from the zoo",
+    "Name": "Zebra",
     "Category": "Animal",
-    "Value": 0,
+    "Value": 986,
     "Eatable": false,
     "Smokeable": false,
     "Shootable": false
   },
   {
     "Name": "Monkey",
-    "Category": "Food",
+    "Category": "Animal",
     "Value": 586,
     "Eatable": false,
     "Smokeable": false,

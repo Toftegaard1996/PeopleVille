@@ -39,5 +39,10 @@
     "Name": "Weapon store",
     "Location": "Garden Way",
     "Category": "Weapon"
+  },
+  {
+    "Name": "Zoo",
+    "Location": "General Row",
+    "Category": "Animal"
   }
 ]
