@@ -1,0 +1,48 @@
+[
+  {
+    "Name": "Supermarket",
+    "Location": "IDCVej",
+    "Category": "Food"
+  },
+  {
+    "Name": "School",
+    "Location": "Cherry Row",
+    "Category": "none"
+  },
+  {
+    "Name": "Musical Store",
+    "Location": "Cherry Row",
+    "Category": "instrument"
+  },
+  {
+    "Name": "Bank",
+    "Location": "General Row",
+    "Category": "none"
+  },
+  {
+    "Name": "Libary",
+    "Location": "Main Way",
+    "Category": "none"
+  },
+  {
+    "Name": "Hospital",
+    "Location": "Royalty Street",
+    "Category": "none"
+  },
+  {
+
+    "Name": "Policestation",
+    "Location": "Garden Way",
+    "Category": "none"
+  },
+  {
+    "Name": "Weapon store",
+    "Location": "Garden Way",
+    "Category": "Weapon"
+  },
+  {
+    "Name": "Zoo",
+    "Location": "General Row",
+    "Category": "Animal"
+  }
+]

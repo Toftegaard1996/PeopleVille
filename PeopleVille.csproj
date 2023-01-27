@@ -8,7 +8,31 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="People\" />
+    <Compile Remove="PeopleClasses\NewFolder\**" />
+    <Compile Remove="People\**" />
+    <EmbeddedResource Remove="PeopleClasses\NewFolder\**" />
+    <EmbeddedResource Remove="People\**" />
+    <Compile Remove="LocationClass\**" />
+    <Compile Remove="PeopleClasses\NewFolder\**" />
+    <Compile Remove="People\**" />
+    <EmbeddedResource Remove="LocationClass\**" />
+    <EmbeddedResource Remove="PeopleClasses\NewFolder\**" />
+    <EmbeddedResource Remove="People\**" />
+    <None Remove="LocationClass\**" />
+    <None Remove="PeopleClasses\NewFolder\**" />
+    <None Remove="People\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="buildingClass\buildings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ItemClass\items.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="items.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

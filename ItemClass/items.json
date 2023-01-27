@@ -1,0 +1,106 @@
+[
+  {
+    "Name": "Cigarettes",
+    "Category": "other",
+    "Value": 30,
+    "Eatable": false,
+    "Smokeable": true,
+    "Shootable": false
+  },
+  {
+    "Name": "Potato",
+    "Category": "Food",
+    "Value": 50,
+    "Eatable": true,
+    "Smokeable": false,
+    "Shootable": false
+  },
+  {
+    "Name": "Snake",
+    "Category": "Animal",
+    "Value": 340,
+    "Eatable": true,
+    "Smokeable": false,
+    "Shootable": false
+  },
+  {
+    "Name": "Throwing knifes",
+    "Category": "Weapon",
+    "Value": 50,
+    "Eatable": false,
+    "Smokeable": false,
+    "Shootable": true
+  },
+  {
+    "Name": "Glock 18",
+    "Category": "Weapon",
+    "Value": 150,
+    "Eatable": false,
+    "Smokeable": false,
+    "Shootable": true
+  },
+  {
+    "Name": "AK-47",
+    "Category": "Weapon",
+    "Value": 1000,
+    "Eatable": false,
+    "Smokeable": false,
+    "Shootable": true
+  },
+  {
+    "Name": "A random kid stolen from the streets",
+    "Category": "other",
+    "Value": 0,
+    "Eatable": true,
+    "Smokeable": false,
+    "Shootable": false
+  },
+  {
+    "Name": "Pictures",
+    "Category": "other",
+    "Value": 50,
+    "Eatable": false,
+    "Smokeable": false,
+    "Shootable": false
+  },
+  {
+    "Name": "Piano",
+    "Category": "instrument",
+    "Value": 70,
+    "Eatable": false,
+    "Smokeable": false,
+    "Shootable": false
+  },
+  {
+    "Name": "Bones",
+    "Category": "other",
+    "Value": 10,
+    "Eatable": false,
+    "Smokeable": false,
+    "Shootable": false
+  },
+  {
+    "Name": "Pocketknife",
+    "Category": "Weapon",
+    "Value": 25,
+    "Eatable": false,
+    "Smokeable": false,
+    "Shootable": false
+  },
+  {
+    "Name": "Zebra",
+    "Category": "Animal",
+    "Value": 986,
+    "Eatable": false,
+    "Smokeable": false,
+    "Shootable": false
+  },
+  {
+    "Name": "Monkey",
+    "Category": "Animal",
+    "Value": 586,
+    "Eatable": false,
+    "Smokeable": false,
+    "Shootable": false
+  }
+]
