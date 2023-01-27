@@ -42,6 +42,28 @@ namespace PeopleVille.buildingClass
             }
             Console.WriteLine("Please type the name of the item you want to sell.");
             string sellItem = Console.ReadLine();
+            int rightItem = 0;
+            while (rightItem == 0)
+            {
+                for (int r = 0; r < stash.Count; r++)
+                {
+                    if (stash[r].Name == sellItem)
+                    {
+                        rightItem++;
+                    }
+                }
+                if (rightItem == 0)
+                {
+                    Console.WriteLine("You wrote the wrong item name, try again");
+                    sellItem = Console.ReadLine();
+                }
+                while (sellItem == "")
+                {
+                    Console.WriteLine("Please type the name of the item you want to sell.");
+                    sellItem = Console.ReadLine();
+
+                }
+            }
             player.GainMoney(player.inventory.items.Find(c => c.Name == sellItem).Value);
             player.inventory.RemoveItem(sellItem);
             Console.WriteLine($"You succesfully sold {sellItem} to the {Name}");
@@ -49,11 +71,34 @@ namespace PeopleVille.buildingClass
 
         public void BuyItem(Player player)
         {
+            string item = "";
             if (stash.Count != 0)
             {
                 ViewItems();
                 Console.WriteLine("Please type the name of the item you want to buy.");
-                string item = Console.ReadLine();
+                int rightItem = 0;
+                item = Console.ReadLine();
+                while (rightItem == 0)
+                {
+                    for (int r = 0; r < stash.Count; r++)
+                    {
+                        if (stash[r].Name == item)
+                        {
+                            rightItem++;
+                        }
+                    }
+                    if (rightItem == 0)
+                    {
+                        Console.WriteLine("You wrote the wrong item name, try again");
+                        item = Console.ReadLine();
+                    }
+                    while (item == "")
+                    {
+                        Console.WriteLine("Please type the name of the item you want to buy.");
+                        item = Console.ReadLine();
+
+                    }
+                }
                 if (stash.Find(c => c.Name == item).Stock != 0)
                 {
                     player.LoseMoney(stash.Find(c => c.Name == item).Value);
@@ -70,6 +115,8 @@ namespace PeopleVille.buildingClass
                 else { Console.WriteLine($"There are no more {Name}'s in stock"); }
             }
             else { Console.WriteLine($"The {Name} does not have anything to sell."); return; }
+            
+            Console.WriteLine($"You bougt a(n) {item}");
         }
 
         public void InteractBuilding(Player player)

@@ -17,7 +17,7 @@ namespace PeopleVille.Functions
             {
                 Console.WriteLine("So, what do you want to do now?");
                 Console.WriteLine("Type the number of the wished action:");
-                Console.WriteLine("1: Trading or talking with a villager \n2: Walk around \n3: See your inventory \n4: Shopping \n5: Go to a specific building");
+                Console.WriteLine("1: Trading with a villager \n2: Walk around \n3: See your inventory \n4: Shopping \n5: Go to a specific building");
                 whatNext = int.Parse(Console.ReadLine());
 
             }
