@@ -146,6 +146,7 @@ namespace PeopleVille.PeopleClasses
 
         public static void subscribeEvent_EventCompleted() 
         {
+            Console.WriteLine("Event done..");
         }
 
         public virtual void Working(List<building> buildingList)
