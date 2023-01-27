@@ -49,11 +49,12 @@ namespace PeopleVille.buildingClass
 
         public void BuyItem(Player player)
         {
+            string item = "";
             if (stash.Count != 0)
             {
                 ViewItems();
                 Console.WriteLine("Please type the name of the item you want to buy.");
-                string item = Console.ReadLine();
+                item = Console.ReadLine();
                 if (stash.Find(c => c.Name == item).Stock != 0)
                 {
                     player.LoseMoney(stash.Find(c => c.Name == item).Value);
@@ -70,6 +71,8 @@ namespace PeopleVille.buildingClass
                 else { Console.WriteLine($"There are no more {Name}'s in stock"); }
             }
             else { Console.WriteLine($"The {Name} does not have anything to sell."); return; }
+            
+            Console.WriteLine($"You bougt a(n) {item}");
         }
 
         public void InteractBuilding(Player player)

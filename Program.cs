@@ -34,7 +34,7 @@ while (StartNewDay)
     string ChooseNewDay = Console.ReadLine();
     while (ChooseNewDay == "")
     {
-        Console.WriteLine("Please type the building you want to enter.");
+        Console.WriteLine("Please type the answer you want.");
         ChooseNewDay = Console.ReadLine();
     }
     Console.Clear();
@@ -43,7 +43,9 @@ while (StartNewDay)
         case "Yes":
             player.TimeOfDay = 0;
             player.RandomEvent(person, buildingList);
-            Console.WriteLine("Today's population of PeopleVille is: " + person.Population);
+            Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("Today's population of PeopleVille is: " + person.Persons.Count());
             Console.WriteLine("The time is 8 am, it's time for work.");
             Console.WriteLine("Do you want to work today? If yes, you'll be assigned a random job \nYes \nNo");
             string chooseToWork = Console.ReadLine();
@@ -55,7 +57,7 @@ while (StartNewDay)
             switch (chooseToWork)
             {
                 case "Yes":
-                    for (int i = 0; i < 9; i++)
+                    for (int i = 0; i < 8; i++)
                     {
                         player.Tick();
                     }
@@ -70,7 +72,7 @@ while (StartNewDay)
                     Console.ReadLine();
                     Console.Clear();
                     
-                    for (int i = 0; i < 9; i++)
+                    for (int i = 0; i < 8; i++)
                     {
                         normalDay.GivingDay(player, person, buildingList);
                         player.Tick();
@@ -81,7 +83,7 @@ while (StartNewDay)
                     break;
             }
             //End of normal 8 hour workday, 4 left of the day
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 4; i++)
             {
                 normalDay.GivingDay(player, person, buildingList);
                 player.Tick();
